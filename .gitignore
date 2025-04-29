@@ -22,7 +22,6 @@ local.properties
 .LSOverride
 Icon
 ._*
-.Spotlight-V100
 .Trashes
 .idea
 .vscode
@@ -37,5 +36,4 @@ Icon
 *.png
 .glide/
 
-main
 go-literal-code-gen

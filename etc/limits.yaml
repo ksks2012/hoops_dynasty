@@ -1,0 +1,77 @@
+BasicSettingRanges:
+  HeightRange:
+    Min: 170
+    Max: 200
+  WeightRange:
+    Min: 70
+    Max: 120
+  AgeRange:
+    Min: 12
+    Max: 18
+DefenseSettingRanges:
+  PerimeterDefenseRange:
+    Min: 0
+    Max: 100
+  InteriorDefenseRange:
+    Min: 0
+    Max: 100
+  BlockRange:
+    Min: 0
+    Max: 100
+  StealRange:
+    Min: 0
+    Max: 100
+  ReboundRange:
+    Min: 0
+    Max: 100
+  DefenseIQRange:
+    Min: 0
+    Max: 100
+MentalSettingRanges:
+  CourtVisionRange:
+    Min: 0
+    Max: 100
+  DefensivePositioningRange:
+    Min: 0
+    Max: 100
+  WorkRateRange:
+    Min: 0
+    Max: 100
+  LeadershipRange:
+    Min: 0
+    Max: 100
+  FocusRange:
+    Min: 0
+    Max: 100
+OffenseSettingRanges:
+  ShootingRange:
+    Min: 0
+    Max: 100
+  ShootingDistanceRange:
+    Min: 0
+    Max: 100
+  FinishingRange:
+    Min: 0
+    Max: 100
+  PassingRange:
+    Min: 0
+    Max: 100
+  DribblingRange:
+    Min: 0
+    Max: 100
+PhysicalSettingRanges:
+  SpeedRange:
+    Min: 0
+    Max: 100
+  StaminaRange:
+    Min: 0
+    Max: 100
+  StrengthRange:
+    Min: 0
+    Max: 100
+  VerticalRange:
+    Min: 0
+    Max: 100
+  AgilityRange:
+    Min: 0
+    Max: 100

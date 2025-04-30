@@ -20,8 +20,9 @@ import (
 )
 
 var (
-	runMode string
-	cfg     string
+	runMode  string
+	cfg      string
+	limitCfg string
 )
 
 func init() {
@@ -32,6 +33,10 @@ func init() {
 	err = setupSetting()
 	if err != nil {
 		log.Fatalf("init.setupSetting err: %v", err)
+	}
+	err = setupLimitSetting()
+	if err != nil {
+		log.Fatalf("init.setupLimitSetting err: %v", err)
 	}
 	err = setupLogger()
 	if err != nil {
@@ -45,7 +50,11 @@ func main() {
 	stopChannel := make(chan os.Signal, 1)
 	signal.Notify(stopChannel, os.Interrupt, unix.SIGTERM)
 
-	log.Printf("run mode: %s", runMode)
+	log.Printf("%+v", global.BasicSetting)
+	log.Printf("%+v", global.DefenseSetting)
+	log.Printf("%+v", global.MentalSetting)
+	log.Printf("%+v", global.OffenseSetting)
+	log.Printf("%+v", global.PhysicalSetting)
 
 	cancel()
 }
@@ -53,13 +62,18 @@ func main() {
 func setupFlag() error {
 	flag.StringVar(&runMode, "mode", "", "running level (info, debug)")
 	flag.StringVar(&cfg, "config", "etc/", "assgin the path of config file")
+	flag.StringVar(&limitCfg, "limitCfg", "etc/", "assgin the path of limit config file")
 	flag.Parse()
 
 	return nil
 }
 
 func setupSetting() error {
-	s, err := setting.NewSetting(strings.Split(cfg, ",")...)
+	s, err := setting.NewLimitSetting(strings.Split(limitCfg, ",")...)
+	if err != nil {
+		return err
+	}
+	s, err = setting.NewSetting(strings.Split(cfg, ",")...)
 	if err != nil {
 		return err
 	}
@@ -74,6 +88,34 @@ func setupSetting() error {
 
 	// TODO: run mode
 
+	return nil
+}
+
+func setupLimitSetting() error {
+	s, err := setting.NewLimitSetting(strings.Split(limitCfg, ",")...)
+	if err != nil {
+		return err
+	}
+	err = s.ReadSection("BasicSettingRanges", &global.BasicSetting)
+	if err != nil {
+		return err
+	}
+	err = s.ReadSection("DefenseSettingRanges", &global.DefenseSetting)
+	if err != nil {
+		return err
+	}
+	err = s.ReadSection("MentalSettingRanges", &global.MentalSetting)
+	if err != nil {
+		return err
+	}
+	err = s.ReadSection("OffenseSettingRanges", &global.OffenseSetting)
+	if err != nil {
+		return err
+	}
+	err = s.ReadSection("PhysicalSettingRanges", &global.PhysicalSetting)
+	if err != nil {
+		return err
+	}
 	return nil
 }
 

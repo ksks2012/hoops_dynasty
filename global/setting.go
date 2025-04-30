@@ -9,4 +9,10 @@ var (
 	AppSetting      *setting.AppSettingS
 	DatabaseSetting *setting.DatabaseSettingS
 	Logger          *logger.Logger
+	// Limits
+	BasicSetting    *setting.BasicSettingS
+	DefenseSetting  *setting.DefenseSettingS
+	MentalSetting   *setting.MentalSettingS
+	OffenseSetting  *setting.OffenseSettingS
+	PhysicalSetting *setting.PhysicalSettingS
 )

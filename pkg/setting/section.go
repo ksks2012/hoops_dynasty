@@ -65,11 +65,11 @@ type OffenseSettingS struct {
 }
 
 type PhysicalSettingS struct {
-	SpeedRange    AttributeRange
-	StaminaRange  AttributeRange
-	StrengthRange AttributeRange
-	VerticalRange AttributeRange
-	AgilityRange  AttributeRange
+	SpeedRange        AttributeRange
+	StaminaRange      AttributeRange
+	StrengthRange     AttributeRange
+	VerticalLeapRange AttributeRange
+	AgilityRange      AttributeRange
 }
 
 var sections = make(map[string]interface{})

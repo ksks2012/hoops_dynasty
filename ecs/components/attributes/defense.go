@@ -9,18 +9,18 @@ type DefensiveAttributes struct {
 	Block            float64
 	Steal            float64
 	Rebound          float64
-	DefenseIQ        float64
+	DefensiveIQ      float64
 }
 
 // NewDefensiveAttributes creates and initializes a character's defensive attributes
-func NewDefensiveAttributes(perimeterDefense, interiorDefense, block, steal, rebound, defenseIQ float64) DefensiveAttributes {
+func NewDefensiveAttributes(perimeterDefense, interiorDefense, block, steal, rebound, defensiveIQ float64) DefensiveAttributes {
 	return DefensiveAttributes{
 		PerimeterDefense: perimeterDefense,
 		InteriorDefense:  interiorDefense,
 		Block:            block,
 		Steal:            steal,
 		Rebound:          rebound,
-		DefenseIQ:        defenseIQ,
+		DefensiveIQ:      defensiveIQ,
 	}
 }
 
@@ -31,5 +31,5 @@ func (da DefensiveAttributes) Display() {
 	fmt.Printf("Block: %.2f\n", da.Block)
 	fmt.Printf("Steal: %.2f\n", da.Steal)
 	fmt.Printf("Rebound: %.2f\n", da.Rebound)
-	fmt.Printf("Defense IQ: %.2f\n", da.DefenseIQ)
+	fmt.Printf("Defense IQ: %.2f\n", da.DefensiveIQ)
 }

@@ -31,6 +31,12 @@ go generate github.com/hoops_dynasty/internal/dao/dbversion/mysql
 go build github.com/hoops_dynasty/cmd/${PROJECT_NAME}
 ```
 
+# Test
+
+```
+go test ./testing/...
+```
+
 ### args
 
 ```sh

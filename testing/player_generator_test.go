@@ -69,25 +69,25 @@ func TestGeneratePlayer(t *testing.T) {
 
 	// Assert basic attributes
 	basic := player.Components["basic"].(*attributes.BasicAttributes)
-	assert.GreaterOrEqual(t, basic.Height, 18.0)
-	assert.LessOrEqual(t, basic.Height, 21.0)
-	assert.GreaterOrEqual(t, basic.Weight, 7.0)
-	assert.LessOrEqual(t, basic.Weight, 12.0)
+	assert.GreaterOrEqual(t, basic.Height, 180.0)
+	assert.LessOrEqual(t, basic.Height, 210.0)
+	assert.GreaterOrEqual(t, basic.Weight, 70.0)
+	assert.LessOrEqual(t, basic.Weight, 120.0)
 	assert.GreaterOrEqual(t, basic.Age, 18)
 	assert.LessOrEqual(t, basic.Age, 40)
 
 	// Assert defensive attributes
 	defense := player.Components["defense"].(*attributes.DefensiveAttributes)
-	assert.GreaterOrEqual(t, defense.PerimeterDefense, 5.0)
-	assert.LessOrEqual(t, defense.PerimeterDefense, 10.0)
+	assert.GreaterOrEqual(t, defense.PerimeterDefense, 50.0)
+	assert.LessOrEqual(t, defense.PerimeterDefense, 100.0)
 
 	// Assert offensive attributes
 	offense := player.Components["offense"].(*attributes.OffensiveAttributes)
-	assert.GreaterOrEqual(t, offense.Shooting, 5.0)
-	assert.LessOrEqual(t, offense.Shooting, 10.0)
+	assert.GreaterOrEqual(t, offense.Shooting, 50.0)
+	assert.LessOrEqual(t, offense.Shooting, 100.0)
 
 	// Assert physical attributes
 	physical := player.Components["physical"].(*attributes.PhysicalAttributes)
-	assert.GreaterOrEqual(t, physical.Speed, 5.0)
-	assert.LessOrEqual(t, physical.Speed, 10.0)
+	assert.GreaterOrEqual(t, physical.Speed, 50.0)
+	assert.LessOrEqual(t, physical.Speed, 100.0)
 }

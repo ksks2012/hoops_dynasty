@@ -22,7 +22,7 @@ func randomFloat(r setting.AttributeRange) float64 {
 	if r.Min >= r.Max {
 		return float64(r.Min)
 	}
-	return float64(rand.Intn(r.Max-r.Min+1)+r.Min) / 10.0
+	return float64(rand.Intn(r.Max-r.Min+1) + r.Min)
 }
 
 // randomName generates a placeholder name (replace with your name generation logic)

@@ -36,5 +36,6 @@ Icon
 *.png
 .glide/
 *.tmp
+*.json
 
 go-literal-code-gen

@@ -4,11 +4,11 @@ import "fmt"
 
 // PhysicalAttributes represents a player's physical abilities
 type PhysicalAttributes struct {
-	Speed        float64 // Movement speed in transitions and drives
-	Stamina      float64 // Lasting energy, affects performance in later stages of a game
-	Strength     float64 // Physical stability in confrontations, especially near the basket
-	VerticalLeap float64 // Jumping height for rebounds, blocks, and layups
-	Agility      float64 // Quick movement and turning ability for offensive drives and defensive reactions
+	Speed        float64 `json:"speed"`         // Movement speed in transitions and drives
+	Stamina      float64 `json:"stamina"`       // Lasting energy, affects performance in later stages of a game
+	Strength     float64 `json:"strength"`      // Physical stability in confrontations, especially near the basket
+	VerticalLeap float64 `json:"vertical_leap"` // Jumping height for rebounds, blocks, and layups
+	Agility      float64 `json:"agility"`       // Quick movement and turning ability for offensive drives and defensive reactions
 }
 
 // NewPhysicalAttributes creates and initializes a character's physical attributes

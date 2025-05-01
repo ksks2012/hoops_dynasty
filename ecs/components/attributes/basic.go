@@ -4,9 +4,9 @@ import "fmt"
 
 // BasicAttributes represents a player's basic physical characteristics
 type BasicAttributes struct {
-	Height float64 // Height in centimeters
-	Weight float64 // Weight in kilograms
-	Age    int     // Age in years
+	Height float64 `json:"height"` // Height in centimeters
+	Weight float64 `json:"weight"` // Weight in kilograms
+	Age    int     `json:"age"`    // Age in years
 }
 
 // NewBasicAttributes creates and initializes a player's basic attributes

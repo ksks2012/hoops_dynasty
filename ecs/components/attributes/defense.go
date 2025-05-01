@@ -4,12 +4,12 @@ import "fmt"
 
 // DefensiveAttributes represents a player's defensive abilities
 type DefensiveAttributes struct {
-	PerimeterDefense float64 // Ability to defend on the perimeter and limit the opponent's shooting accuracy
-	InteriorDefense  float64 // Ability to defend inside the paint, affecting block and contest success
-	Block            float64
-	Steal            float64
-	Rebound          float64
-	DefensiveIQ      float64
+	PerimeterDefense float64 `json:"perimeter_defense"` // Ability to defend on the perimeter and limit the opponent's shooting accuracy
+	InteriorDefense  float64 `json:"interior_defense"`  // Ability to defend inside the paint, affecting block and contest success
+	Block            float64 `json:"block"`
+	Steal            float64 `json:"steal"`
+	Rebound          float64 `json:"rebound"`
+	DefensiveIQ      float64 `json:"defensive_iq"`
 }
 
 // NewDefensiveAttributes creates and initializes a character's defensive attributes

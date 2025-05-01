@@ -4,11 +4,11 @@ import "fmt"
 
 // OffensiveTechnicalAttributes represents a player's offensive abilities
 type OffensiveAttributes struct {
-	Shooting         float64 // Shooting accuracy for close, mid-range, and three-point shots
-	ShootingDistance float64 // Shooting range for close, mid-range, and three-point shots
-	Finishing        float64 // Scoring efficiency in the paint, especially under defensive pressure
-	Passing          float64 // Pass accuracy and ability to create scoring opportunities
-	Dribbling        float64 // Ability to find space and break through defenders
+	Shooting         float64 `json:"shooting"`          // Shooting accuracy for close, mid-range, and three-point shots
+	ShootingDistance float64 `json:"shooting_distance"` // Shooting range for close, mid-range, and three-point shots
+	Finishing        float64 `json:"finishing"`         // Scoring efficiency in the paint, especially under defensive pressure
+	Passing          float64 `json:"passing"`           // Pass accuracy and ability to create scoring opportunities
+	Dribbling        float64 `json:"dribbling"`         // Ability to find space and break through defenders
 }
 
 // NewOffensiveAttributes creates and initializes a character's offensive attributes

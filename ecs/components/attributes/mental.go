@@ -4,11 +4,11 @@ import "fmt"
 
 // MentalAttributes represents a player's mental attributes
 type MentalAttributes struct {
-	CourtVision          float64 // Ability to recognize teammates' positions and execute effective offense
-	DefensivePositioning float64 // Ability to maintain good positioning on defense and anticipate opponents' moves
-	WorkRate             float64 // Player's effort and activity on the court, especially in defense
-	Leadership           float64 // Ability to motivate teammates and improve teamwork
-	Focus                float64 // Concentration level, helps avoid mistakes and stay attentive
+	CourtVision          float64 `json:"court_vision"`          // Ability to recognize teammates' positions and execute effective offense
+	DefensivePositioning float64 `json:"defensive_positioning"` // Ability to maintain good positioning on defense and anticipate opponents' moves
+	WorkRate             float64 `json:"work_rate"`             // Player's effort and activity on the court, especially in defense
+	Leadership           float64 `json:"leadership"`            // Ability to motivate teammates and improve teamwork
+	Focus                float64 `json:"focus"`                 // Concentration level, helps avoid mistakes and stay attentive
 }
 
 // NewMentalAttributes creates and initializes a player's mental attributes

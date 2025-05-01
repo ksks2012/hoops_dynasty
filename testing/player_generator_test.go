@@ -3,7 +3,7 @@ package testing
 import (
 	"testing"
 
-	"github.com/hoops_dynasty/ecs/components/attributes"
+	components "github.com/hoops_dynasty/ecs/components/attributes"
 	"github.com/hoops_dynasty/global"
 	"github.com/hoops_dynasty/pkg/generator"
 	"github.com/hoops_dynasty/pkg/setting"
@@ -68,7 +68,7 @@ func TestGeneratePlayer(t *testing.T) {
 	assert.NotNil(t, player.Components["physical"])
 
 	// Assert basic attributes
-	basic := player.Components["basic"].(*attributes.BasicAttributes)
+	basic := player.Components["basic"].(*components.BasicAttributes)
 	assert.GreaterOrEqual(t, basic.Height, 180.0)
 	assert.LessOrEqual(t, basic.Height, 210.0)
 	assert.GreaterOrEqual(t, basic.Weight, 70.0)
@@ -77,17 +77,17 @@ func TestGeneratePlayer(t *testing.T) {
 	assert.LessOrEqual(t, basic.Age, 40)
 
 	// Assert defensive attributes
-	defense := player.Components["defense"].(*attributes.DefensiveAttributes)
+	defense := player.Components["defense"].(*components.DefensiveAttributes)
 	assert.GreaterOrEqual(t, defense.PerimeterDefense, 50.0)
 	assert.LessOrEqual(t, defense.PerimeterDefense, 100.0)
 
 	// Assert offensive attributes
-	offense := player.Components["offense"].(*attributes.OffensiveAttributes)
+	offense := player.Components["offense"].(*components.OffensiveAttributes)
 	assert.GreaterOrEqual(t, offense.Shooting, 50.0)
 	assert.LessOrEqual(t, offense.Shooting, 100.0)
 
 	// Assert physical attributes
-	physical := player.Components["physical"].(*attributes.PhysicalAttributes)
+	physical := player.Components["physical"].(*components.PhysicalAttributes)
 	assert.GreaterOrEqual(t, physical.Speed, 50.0)
 	assert.LessOrEqual(t, physical.Speed, 100.0)
 }

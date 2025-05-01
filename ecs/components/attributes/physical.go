@@ -1,4 +1,4 @@
-package attributes
+package components
 
 import "fmt"
 

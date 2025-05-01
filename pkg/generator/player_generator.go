@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/hoops_dynasty/ecs/components/attributes"
+	components "github.com/hoops_dynasty/ecs/components/attributes"
 	"github.com/hoops_dynasty/ecs/entities"
 	"github.com/hoops_dynasty/global"
 	"github.com/hoops_dynasty/pkg/setting"
@@ -37,13 +37,13 @@ func GeneratePlayer(id int) *entities.Player {
 	rand.Seed(time.Now().UnixNano())
 
 	// Create player components based on settings
-	basic := &attributes.BasicAttributes{
+	basic := &components.BasicAttributes{
 		Height: randomFloat(global.BasicSetting.HeightRange),
 		Weight: randomFloat(global.BasicSetting.WeightRange),
 		Age:    randomInt(global.BasicSetting.AgeRange),
 	}
 
-	defense := &attributes.DefensiveAttributes{
+	defense := &components.DefensiveAttributes{
 		PerimeterDefense: randomFloat(global.DefenseSetting.PerimeterDefenseRange),
 		InteriorDefense:  randomFloat(global.DefenseSetting.InteriorDefenseRange),
 		Block:            randomFloat(global.DefenseSetting.BlockRange),
@@ -52,7 +52,7 @@ func GeneratePlayer(id int) *entities.Player {
 		DefensiveIQ:      randomFloat(global.DefenseSetting.DefensiveIQRange),
 	}
 
-	mental := &attributes.MentalAttributes{
+	mental := &components.MentalAttributes{
 		CourtVision:          randomFloat(global.MentalSetting.CourtVisionRange),
 		DefensivePositioning: randomFloat(global.MentalSetting.DefensivePositioningRange),
 		WorkRate:             randomFloat(global.MentalSetting.WorkRateRange),
@@ -60,7 +60,7 @@ func GeneratePlayer(id int) *entities.Player {
 		Focus:                randomFloat(global.MentalSetting.FocusRange),
 	}
 
-	offense := &attributes.OffensiveAttributes{
+	offense := &components.OffensiveAttributes{
 		Shooting:         randomFloat(global.OffenseSetting.ShootingRange),
 		ShootingDistance: randomFloat(global.OffenseSetting.ShootingDistanceRange),
 		Finishing:        randomFloat(global.OffenseSetting.FinishingRange),
@@ -68,7 +68,7 @@ func GeneratePlayer(id int) *entities.Player {
 		Dribbling:        randomFloat(global.OffenseSetting.DribblingRange),
 	}
 
-	physical := &attributes.PhysicalAttributes{
+	physical := &components.PhysicalAttributes{
 		Speed:        randomFloat(global.PhysicalSetting.SpeedRange),
 		Stamina:      randomFloat(global.PhysicalSetting.StaminaRange),
 		Strength:     randomFloat(global.PhysicalSetting.StrengthRange),

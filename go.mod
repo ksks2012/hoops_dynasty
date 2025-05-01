@@ -9,7 +9,9 @@ require (
 	github.com/jinzhu/gorm v1.9.16 // indirect
 	github.com/semeqetjsakatayza/go-metastore-mysql v0.1.1 // indirect
 	github.com/spf13/viper v1.10.1 // indirect
+	github.com/stretchr/testify v1.7.0
 	github.com/yinyin/go-literal-code-gen v0.0.0-20230729153634-6be9e1e6bfb2 // indirect
 	github.com/yinyin/go-mysql-round-robin-connector v0.10.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

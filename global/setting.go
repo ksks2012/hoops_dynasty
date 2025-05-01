@@ -8,6 +8,7 @@ import (
 var (
 	AppSetting      *setting.AppSettingS
 	DatabaseSetting *setting.DatabaseSettingS
+	SaveLoadSetting *setting.SaveLoadSettingS
 	Logger          *logger.Logger
 	// Limits
 	BasicSetting    *setting.BasicSettingS

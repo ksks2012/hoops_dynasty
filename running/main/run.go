@@ -12,11 +12,13 @@ import (
 	"golang.org/x/sys/unix"
 	"gopkg.in/natefinch/lumberjack.v2"
 
+	"github.com/hoops_dynasty/ecs/ecs_systems"
 	"github.com/hoops_dynasty/global"
 	"github.com/hoops_dynasty/internal/dao/config"
 	"github.com/hoops_dynasty/internal/model"
 	"github.com/hoops_dynasty/pkg/logger"
 	"github.com/hoops_dynasty/pkg/setting"
+	"github.com/hoops_dynasty/running/main/initial"
 )
 
 var (
@@ -56,6 +58,9 @@ func main() {
 	log.Printf("%+v", global.OffenseSetting)
 	log.Printf("%+v", global.PhysicalSetting)
 
+	players := initial.InitPlayers(10)
+	ecs_systems.SaveUnitsState(players, "test")
+
 	cancel()
 }
 
@@ -82,6 +87,10 @@ func setupSetting() error {
 		return err
 	}
 	err = s.ReadSection("Database", &global.DatabaseSetting)
+	if err != nil {
+		return err
+	}
+	err = s.ReadSection("SaveLoad", &global.SaveLoadSetting)
 	if err != nil {
 		return err
 	}
